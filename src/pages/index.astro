@@ -229,8 +229,11 @@ const interestOptions = [
         </ul>
 
         <div class="nav-actions">
-          <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme">
-            <span class="theme-icon" aria-hidden="true"></span>
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon-stack" aria-hidden="true">
+              <img class="theme-icon theme-icon--moon" src="/assets/theme-icon-dark.svg" alt="" width="18" height="18" />
+              <img class="theme-icon theme-icon--sun" src="/assets/theme-icon-light.svg" alt="" width="18" height="18" />
+            </span>
           </button>
           <a class="button button--primary nav-cta" href="#contact">Engage Us</a>
           <button class="menu-button" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
