@@ -9,7 +9,6 @@ const menuToggle = document.querySelector('[data-menu-toggle]');
 const menuClose = document.querySelector('[data-menu-close]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
 const mobileLinks = mobileMenu?.querySelectorAll('a') || [];
-const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function setTheme(theme) {
   root.dataset.theme = theme;
@@ -20,33 +19,8 @@ function setTheme(theme) {
 
 setTheme(root.dataset.theme || 'light');
 
-async function toggleTheme(event) {
-  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  const buttonRect = themeToggle?.getBoundingClientRect();
-  const x = event?.clientX ?? (buttonRect ? buttonRect.left + (buttonRect.width / 2) : window.innerWidth / 2);
-  const y = event?.clientY ?? (buttonRect ? buttonRect.top + (buttonRect.height / 2) : window.innerHeight / 2);
-
-  root.style.setProperty('--theme-toggle-x', `${x}px`);
-  root.style.setProperty('--theme-toggle-y', `${y}px`);
-
-  if (!document.startViewTransition || reduceMotionQuery.matches) {
-    setTheme(nextTheme);
-    return;
-  }
-
-  const transition = document.startViewTransition(() => {
-    setTheme(nextTheme);
-  });
-
-  try {
-    await transition.finished;
-  } catch {
-    setTheme(nextTheme);
-  }
-}
-
-themeToggle?.addEventListener('click', (event) => {
-  void toggleTheme(event);
+themeToggle?.addEventListener('click', () => {
+  setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
 });
 
 function openMenu() {
