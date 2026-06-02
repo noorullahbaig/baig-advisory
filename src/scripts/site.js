@@ -96,13 +96,8 @@ if ('IntersectionObserver' in window) {
 
 const form = document.querySelector('[data-contact-form]');
 const formMessage = document.querySelector('[data-form-message]');
-const successUrl = form?.getAttribute('data-success-url') || '/success/';
 
-function encodeFormData(formData) {
-  return new URLSearchParams(formData).toString();
-}
-
-form?.addEventListener('submit', async (event) => {
+form?.addEventListener('submit', (event) => {
   if (!form.checkValidity()) return;
   if (isLocalPreview) {
     event.preventDefault();
@@ -111,44 +106,5 @@ form?.addEventListener('submit', async (event) => {
       formMessage.textContent = 'Form delivery cannot be verified in local preview. Test a submission after deployment.';
     }
     return;
-  }
-
-  event.preventDefault();
-  const submitButton = form.querySelector('button[type="submit"]');
-  const originalText = submitButton?.textContent || 'Send Inquiry';
-  const formData = new FormData(form);
-
-  if (submitButton) {
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
-  }
-
-  if (formMessage) {
-    formMessage.textContent = '';
-    formMessage.dataset.state = '';
-  }
-
-  try {
-    const response = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeFormData(formData)
-    });
-
-    if (!response.ok) {
-      throw new Error('Submission failed');
-    }
-
-    window.location.assign(successUrl);
-  } catch {
-    if (formMessage) {
-      formMessage.dataset.state = 'error';
-      formMessage.textContent = 'Your inquiry could not be sent. Please try again.';
-    }
-  } finally {
-    if (submitButton) {
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
-    }
   }
 });
