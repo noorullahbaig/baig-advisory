@@ -285,13 +285,30 @@ h3 {
 }
 
 .nav-links a {
+  position: relative;
   color: oklch(0.92 0.01 250);
   font-size: 0.94rem;
   font-weight: 700;
+  transition: color 180ms var(--ease-out);
 }
 
 .nav-links a:hover {
   color: var(--accent-400);
+}
+
+.nav-links a.is-active {
+  color: var(--accent-400);
+}
+
+.nav-links a.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-400);
+  border-radius: 1px;
 }
 
 .button,

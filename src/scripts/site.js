@@ -71,6 +71,23 @@ window.addEventListener('load', () => {
 window.addEventListener('hashchange', () => {
   window.setTimeout(scrollToHash, 40);
 });
+/* Active section tracking */
+const navLinksAll = document.querySelectorAll('.nav-links a[href^="#"]');
+const sectionTargets = document.querySelectorAll('section[id]');
+
+if ('IntersectionObserver' in window && sectionTargets.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinksAll.forEach((link) => {
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+      });
+    });
+  }, { threshold: 0.1, rootMargin: '-20% 0px -60% 0px' });
+
+  sectionTargets.forEach((section) => sectionObserver.observe(section));
+}
 
 const revealItems = document.querySelectorAll('.reveal');
 revealItems.forEach((item, index) => {
