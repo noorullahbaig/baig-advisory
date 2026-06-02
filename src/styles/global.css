@@ -354,13 +354,11 @@ h3 {
   display: block;
   width: 18px;
   height: 18px;
-  border: 2px solid currentColor;
-  border-radius: 999px;
-  box-shadow: inset -6px -3px 0 0 currentColor, 0 0 0 1px oklch(1 0 0 / 0.12);
+  background: center / contain no-repeat url('/assets/theme-icon-light.svg');
 }
 
 [data-theme='dark'] .theme-icon {
-  box-shadow: none;
+  background-image: url('/assets/theme-icon-dark.svg');
 }
 
 .menu-button {
