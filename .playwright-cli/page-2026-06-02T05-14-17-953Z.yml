@@ -1,0 +1,22 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - link "BAIG Advisory home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img "BAIG Advisory" [ref=e4]
+    - heading "Message sent." [level=1] [ref=e5]
+    - paragraph [ref=e6]: We'll be in touch within 24–48 hours.
+    - link "Return to homepage" [ref=e7] [cursor=pointer]:
+      - /url: /
+  - generic [ref=e10]:
+    - button "Menu" [ref=e11]:
+      - img [ref=e13]
+      - generic: Menu
+    - button "Inspect" [ref=e17]:
+      - img [ref=e19]
+      - generic: Inspect
+    - button "Audit" [ref=e21]:
+      - img [ref=e23]
+      - generic: Audit
+    - button "Settings" [ref=e26]:
+      - img [ref=e28]
+      - generic: Settings

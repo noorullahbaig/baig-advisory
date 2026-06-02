@@ -1,0 +1,382 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - navigation "Primary navigation" [ref=e4]:
+      - link "BAIG Advisory home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+        - generic [ref=e7]:
+          - generic [ref=e8]: BAIG
+          - generic [ref=e9]: Advisory
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "About" [ref=e12] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e13]:
+          - link "Services" [ref=e14] [cursor=pointer]:
+            - /url: "#services"
+        - listitem [ref=e15]:
+          - link "Experience" [ref=e16] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e17]:
+          - link "Sectors" [ref=e18] [cursor=pointer]:
+            - /url: "#sectors"
+        - listitem [ref=e19]:
+          - link "Contact" [ref=e20] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e21]:
+        - button "Switch color theme" [ref=e22] [cursor=pointer]
+        - link "Engage Us" [ref=e24] [cursor=pointer]:
+          - /url: "#contact"
+  - main [ref=e25]:
+    - region "Strategy that moves the needle." [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - paragraph [ref=e29]: Senior Executive Advisory
+          - heading "Strategy that moves the needle." [level=1] [ref=e30]
+          - paragraph [ref=e31]: BAIG Advisory brings over 20 years of senior executive experience across digital transformation, governance, operational excellence, and strategic partnerships, serving organizations in the US, GCC, and European markets.
+          - generic [ref=e32]:
+            - link "Engage Us" [ref=e33] [cursor=pointer]:
+              - /url: "#contact"
+            - link "Explore Services" [ref=e34] [cursor=pointer]:
+              - /url: "#services"
+        - complementary "BAIG Advisory credibility signals" [ref=e35]:
+          - generic [ref=e36]:
+            - strong [ref=e37]: 20+
+            - generic [ref=e38]: Years of Senior Executive Leadership
+          - generic [ref=e39]:
+            - strong [ref=e40]: "4"
+            - generic [ref=e41]: C-Suite Functions Led
+          - generic [ref=e42]:
+            - strong [ref=e43]: Enterprise
+            - generic [ref=e44]: Clients Served
+          - generic [ref=e45]:
+            - strong [ref=e46]: Fortune 500
+            - generic [ref=e47]: Client Experience
+          - generic [ref=e48]:
+            - strong [ref=e49]: US, GCC & EU
+            - generic [ref=e50]: Markets Served
+    - region "Advisory capabilities" [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]: Business Strategy
+        - generic [ref=e54]: Digital Transformation
+        - generic [ref=e55]: IT Governance
+        - generic [ref=e56]: Operational Excellence
+        - generic [ref=e57]: Strategic Partnerships
+        - generic [ref=e58]: Risk & Compliance
+        - generic [ref=e59]: AI Implementation
+        - generic [ref=e60]: Commercial Operations
+        - generic [ref=e61]: Executive Leadership
+        - generic [ref=e62]: Business Strategy
+        - generic [ref=e63]: Digital Transformation
+        - generic [ref=e64]: IT Governance
+        - generic [ref=e65]: Operational Excellence
+        - generic [ref=e66]: Strategic Partnerships
+        - generic [ref=e67]: Risk & Compliance
+        - generic [ref=e68]: AI Implementation
+        - generic [ref=e69]: Commercial Operations
+        - generic [ref=e70]: Executive Leadership
+    - region "Executive-grade advisory from someone who has done it." [ref=e71]:
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - paragraph [ref=e74]: About BAIG Advisory
+          - heading "Executive-grade advisory from someone who has done it." [level=2] [ref=e75]
+          - paragraph [ref=e76]: BAIG Advisory is a boutique consulting firm founded by a senior executive with over two decades of leadership at the intersection of strategy, technology, and operations. Having held VP, CIO, CFO, and Head of Audit & Compliance roles, including 20+ years at Siemens, we bring practitioner-level insight, not theory.
+          - paragraph [ref=e77]: Our work spans digital transformation, governance frameworks, strategic alliance management, and business excellence. We engage clients across the United States, GCC, and European markets, with deep familiarity in industrial technology, fintech, and the energy sector.
+        - generic [ref=e78]:
+          - img "Jawad Baig, Founder and Principal Advisor of BAIG Advisory" [ref=e79]
+          - generic [ref=e80]:
+            - heading "Jawad Baig" [level=3] [ref=e81]
+            - paragraph [ref=e82]: Founder & Principal Advisor, BAIG Advisory
+          - list [ref=e83]:
+            - listitem [ref=e84]: Former VP & CIO, Siemens, 20+ year tenure across multiple senior roles
+            - listitem [ref=e85]: CFO & Head of Audit and Compliance leadership experience
+            - listitem [ref=e86]: Expertise in ISO/IEC 42001 AI Governance and Management Systems
+            - listitem [ref=e87]: Active advisory presence across Atlanta, Georgia (US) and the Middle East
+    - region "Credibility a senior viewer can scan quickly." [ref=e88]:
+      - generic [ref=e89]:
+        - heading "Credibility a senior viewer can scan quickly." [level=2] [ref=e90]
+        - paragraph [ref=e91]: The firm is positioned around executive accountability, international market awareness, and governance-led transformation experience.
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - strong [ref=e94]: 20+
+          - generic [ref=e95]: Years Executive Leadership
+        - generic [ref=e96]:
+          - strong [ref=e97]: "4"
+          - generic [ref=e98]: C-Suite Function Domains
+        - generic [ref=e99]:
+          - strong [ref=e100]: US, GCC & EU
+          - generic [ref=e101]: Markets Served
+        - generic [ref=e102]:
+          - strong [ref=e103]: AI
+          - generic [ref=e104]: ISO/IEC 42001 Governance
+    - region "\"We bring 20+ years of lived experience in senior executive roles, strategy, technology, finance, and compliance, so clients get guidance that is grounded in real accountability, not advisory distance.\"" [ref=e105]:
+      - generic [ref=e106]:
+        - paragraph [ref=e107]: "\"We bring 20+ years of lived experience in senior executive roles, strategy, technology, finance, and compliance, so clients get guidance that is grounded in real accountability, not advisory distance.\""
+        - generic [ref=e109]:
+          - strong [ref=e110]: Jawad Baig
+          - generic [ref=e111]: Founder & Principal Advisor, BAIG Advisory
+    - region "Advisory services built for senior-level outcomes." [ref=e112]:
+      - generic [ref=e113]:
+        - paragraph [ref=e114]: What We Do
+        - heading "Advisory services built for senior-level outcomes." [level=2] [ref=e115]
+        - paragraph [ref=e116]: We work at the executive layer, strategy through execution, across the domains where leadership decisions create the most leverage.
+      - generic [ref=e117]:
+        - article [ref=e118]:
+          - heading "Business Strategy & Operations" [level=3] [ref=e119]
+          - paragraph [ref=e120]: Strategic planning, operating model design, performance improvement, market entry, organizational restructuring, and KPI discipline.
+          - generic [ref=e121]:
+            - generic [ref=e122]: Strategic Planning
+            - generic [ref=e123]: Operational Excellence
+            - generic [ref=e124]: KPI Frameworks
+        - article [ref=e125]:
+          - heading "Digital Transformation & IT Leadership" [level=3] [ref=e126]
+          - paragraph [ref=e127]: CIO-level advisory across technology strategy, infrastructure modernization, data center operations, enterprise IT governance, and digital roadmaps.
+          - generic [ref=e128]:
+            - generic [ref=e129]: CIO Advisory
+            - generic [ref=e130]: IT Governance
+            - generic [ref=e131]: Digital Roadmap
+        - article [ref=e132]:
+          - heading "AI Strategy & Governance" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Responsible AI adoption, AI management systems, AI readiness, ISO/IEC 42001 frameworks, board advisory, and practical implementation framing.
+          - generic [ref=e135]:
+            - generic [ref=e136]: ISO/IEC 42001
+            - generic [ref=e137]: AI Readiness
+            - generic [ref=e138]: Responsible AI
+        - article [ref=e139]:
+          - heading "Governance, Risk & Compliance" [level=3] [ref=e140]
+          - paragraph [ref=e141]: Internal control environments, audit frameworks, compliance programs, accountability structures, risk management, and AI governance per ISO/IEC 42001.
+          - generic [ref=e142]:
+            - generic [ref=e143]: Audit & Compliance
+            - generic [ref=e144]: Risk Management
+            - generic [ref=e145]: ISO 42001
+        - article [ref=e146]:
+          - heading "Strategic Alliances & Partnerships" [level=3] [ref=e147]
+          - paragraph [ref=e148]: Partnership structuring, negotiation support, commercial partnerships, deal design, governance mechanisms, performance measurement, and joint ventures.
+          - generic [ref=e149]:
+            - generic [ref=e150]: Alliance Management
+            - generic [ref=e151]: Commercial Deals
+            - generic [ref=e152]: Joint Ventures
+        - article [ref=e153]:
+          - heading "Interim Executive & Fractional CXO" [level=3] [ref=e154]
+          - paragraph [ref=e155]: Embedded executive leadership during transitions, transformation, growth phases, or capability gaps, with team mentoring and handover planning.
+          - generic [ref=e156]:
+            - generic [ref=e157]: Fractional CIO
+            - generic [ref=e158]: Interim COO
+            - generic [ref=e159]: Executive Transition
+    - region "Depth forged over two decades." [ref=e160]:
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - paragraph [ref=e163]: Executive Track Record
+          - heading "Depth forged over two decades." [level=2] [ref=e164]
+          - paragraph [ref=e165]: This is not advisory built on frameworks alone. Every engagement is informed by firsthand P&L accountability, cross-functional leadership, and board-level exposure at globally recognized organizations.
+        - generic [ref=e166]:
+          - article [ref=e167]:
+            - text: Present
+            - heading "Founder & Principal Advisor" [level=3] [ref=e168]
+            - paragraph [ref=e169]: BAIG Advisory, Alpharetta, Georgia
+            - paragraph [ref=e170]: Senior executive consulting across business strategy, digital transformation, governance, and commercial partnerships. Serving clients in the US, GCC, and European markets.
+          - article [ref=e171]:
+            - text: Siemens, 20+ Years
+            - heading "VP & Chief Information Officer" [level=3] [ref=e172]
+            - paragraph [ref=e173]: Siemens
+            - paragraph [ref=e174]: Led enterprise IT strategy, infrastructure, and digital transformation programs. Managed large-scale IT operations including data center consolidation, ERP transformation, and vendor governance.
+          - article [ref=e175]:
+            - text: Siemens
+            - heading "CFO & Finance Operations Lead" [level=3] [ref=e176]
+            - paragraph [ref=e177]: Siemens
+            - paragraph [ref=e178]: Finance leadership with accountability for budgeting, reporting, and operational finance across business units. Drove cost discipline and financial performance improvement.
+          - article [ref=e179]:
+            - text: Siemens
+            - heading "Head of Audit & Compliance" [level=3] [ref=e180]
+            - paragraph [ref=e181]: Siemens
+            - paragraph [ref=e182]: Built and led the internal audit and compliance function, establishing frameworks for risk management, regulatory adherence, and governance across business lines.
+          - article [ref=e183]:
+            - text: Earlier Career
+            - heading "Senior Roles in Strategy & Operations" [level=3] [ref=e184]
+            - paragraph [ref=e185]: Motorola, Deloitte, Strategic Alliance Roles
+            - paragraph [ref=e186]: Early career roles in strategy, operations, and financial services spanning multinational environments. Established cross-industry expertise in technology and consulting.
+    - region "Sector experience that translates." [ref=e187]:
+      - generic [ref=e188]:
+        - paragraph [ref=e189]: Industries We Serve
+        - heading "Sector experience that translates." [level=2] [ref=e190]
+        - paragraph [ref=e191]: Our advisory work is concentrated in sectors where technology, governance, and strategy intersect with scale and complexity.
+      - generic [ref=e192]:
+        - article [ref=e193]:
+          - heading "Industrial Technology" [level=3] [ref=e194]
+          - paragraph [ref=e195]: 20+ years at Siemens, deep expertise in industrial operations, automation, and large-scale enterprise transformation.
+        - article [ref=e196]:
+          - heading "Financial Services & Fintech" [level=3] [ref=e197]
+          - paragraph [ref=e198]: CFO-level experience and fintech partnership management, with expertise in regulatory compliance and financial operations.
+        - article [ref=e199]:
+          - heading "Energy & Oil & Gas" [level=3] [ref=e200]
+          - paragraph [ref=e201]: Advisory experience in energy sector operations and transformation, with growing expertise in GCC regional energy markets.
+        - article [ref=e202]:
+          - heading "Technology & Consulting" [level=3] [ref=e203]
+          - paragraph [ref=e204]: Roots at Motorola and Deloitte, cross-industry advisory capability with a strong foundation in technology and management consulting.
+    - region "Flexible engagement models for every need." [ref=e205]:
+      - generic [ref=e206]:
+        - paragraph [ref=e207]: How We Engage
+        - heading "Flexible engagement models for every need." [level=2] [ref=e208]
+      - generic [ref=e209]:
+        - article [ref=e210]:
+          - generic [ref=e211]: Advisory
+          - heading "Retained Advisory" [level=3] [ref=e212]
+          - paragraph [ref=e213]: Ongoing strategic advisory relationship with defined scope and monthly touchpoints. Ideal for boards, CEOs, and senior leadership teams navigating transformation.
+          - list [ref=e214]:
+            - listitem [ref=e215]: Monthly strategy sessions
+            - listitem [ref=e216]: On-call senior guidance
+            - listitem [ref=e217]: Quarterly review and recalibration
+            - listitem [ref=e218]: Priority responsiveness
+          - paragraph [ref=e219]:
+            - strong [ref=e220]: "Best for:"
+            - text: Boards, CEOs, and senior leadership teams needing ongoing senior guidance.
+        - article [ref=e221]:
+          - generic [ref=e222]: Scoped Project
+          - heading "Project Engagement" [level=3] [ref=e223]
+          - paragraph [ref=e224]: Scoped, outcome-driven engagements with defined deliverables. From strategy workshops to full transformation programs, clear milestones, clear accountability.
+          - list [ref=e225]:
+            - listitem [ref=e226]: Defined scope and deliverables
+            - listitem [ref=e227]: Weekly progress and stakeholder updates
+            - listitem [ref=e228]: Full documentation and handoff
+            - listitem [ref=e229]: Post-project review included
+          - paragraph [ref=e230]:
+            - strong [ref=e231]: "Best for:"
+            - text: Organizations needing a defined roadmap, transformation plan, governance framework, or strategic execution support.
+        - article [ref=e232]:
+          - generic [ref=e233]: Interim
+          - heading "Fractional Executive" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Embedded, part-time executive leadership at C-suite level. Available as fractional CIO or interim COO during transitions, growth phases, or capability gaps.
+          - list [ref=e236]:
+            - listitem [ref=e237]: Dedicated days per week
+            - listitem [ref=e238]: Full executive accountability
+            - listitem [ref=e239]: Team leadership and mentoring
+            - listitem [ref=e240]: Structured handover planning
+          - paragraph [ref=e241]:
+            - strong [ref=e242]: "Best for:"
+            - text: Companies needing interim executive leadership during transition, transformation, or capability gaps.
+    - region "Let's discuss what you're building." [ref=e243]:
+      - generic [ref=e244]:
+        - generic [ref=e245]:
+          - paragraph [ref=e246]: Get in Touch
+          - heading "Let's discuss what you're building." [level=2] [ref=e247]
+          - paragraph [ref=e248]: Whether you're navigating a transformation, building out a governance function, or need a senior strategic thought partner, we're happy to start with a conversation.
+          - generic [ref=e249]:
+            - generic [ref=e250]:
+              - term [ref=e251]: Headquarters
+              - definition [ref=e252]: Alpharetta, Georgia, USA
+            - generic [ref=e253]:
+              - term [ref=e254]: Market Coverage
+              - definition [ref=e255]: United States, GCC & European Markets
+            - generic [ref=e256]:
+              - term [ref=e257]: LinkedIn
+              - definition [ref=e258]:
+                - link "Connect on LinkedIn" [ref=e259] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/jawadbaig/
+            - generic [ref=e260]:
+              - term [ref=e261]: Response Time
+              - definition [ref=e262]: Within 24–48 hours
+        - generic [ref=e263]:
+          - heading "Start the Conversation" [level=3] [ref=e264]
+          - generic [ref=e265]:
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - generic [ref=e268]: First Name
+                - textbox "First Name" [ref=e269]
+              - generic [ref=e270]:
+                - generic [ref=e271]: Last Name
+                - textbox "Last Name" [ref=e272]
+            - generic [ref=e273]:
+              - generic [ref=e274]: Email Address
+              - textbox "Email Address" [ref=e275]
+            - generic [ref=e276]:
+              - generic [ref=e277]: Company / Organization
+              - textbox "Company / Organization" [ref=e278]
+            - generic [ref=e279]:
+              - generic [ref=e280]: Area of Interest
+              - combobox "Area of Interest" [ref=e281]:
+                - option "Select one" [selected]
+                - option "Business Strategy & Operations"
+                - option "Digital Transformation & IT"
+                - option "Governance, Risk & Compliance"
+                - option "Strategic Alliances & Partnerships"
+                - option "Fractional / Interim Executive"
+                - option "AI Strategy & Governance"
+                - option "Other"
+            - generic [ref=e282]:
+              - generic [ref=e283]: Message
+              - textbox "Message" [ref=e284]
+            - status [ref=e285]
+            - button "Send Inquiry" [ref=e286] [cursor=pointer]
+  - contentinfo [ref=e287]:
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - link "BAIG Advisory home" [ref=e290] [cursor=pointer]:
+          - /url: /
+          - img "BAIG Advisory" [ref=e291]
+        - paragraph [ref=e292]: Senior executive advisory and consulting across business strategy, digital transformation, governance, and strategic partnerships, serving US, GCC, and European markets.
+      - generic [ref=e293]:
+        - heading "Services" [level=2] [ref=e294]
+        - list [ref=e295]:
+          - listitem [ref=e296]:
+            - link "Business Strategy" [ref=e297] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e298]:
+            - link "Digital Transformation" [ref=e299] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e300]:
+            - link "Governance & Risk" [ref=e301] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e302]:
+            - link "Strategic Alliances" [ref=e303] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e304]:
+            - link "Fractional Executive" [ref=e305] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e306]:
+            - link "AI Governance" [ref=e307] [cursor=pointer]:
+              - /url: "#services"
+      - generic [ref=e308]:
+        - heading "Firm" [level=2] [ref=e309]
+        - list [ref=e310]:
+          - listitem [ref=e311]:
+            - link "About" [ref=e312] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=e313]:
+            - link "Experience" [ref=e314] [cursor=pointer]:
+              - /url: "#experience"
+          - listitem [ref=e315]:
+            - link "Sectors" [ref=e316] [cursor=pointer]:
+              - /url: "#sectors"
+          - listitem [ref=e317]:
+            - link "Engagement Model" [ref=e318] [cursor=pointer]:
+              - /url: "#engagement"
+      - generic [ref=e319]:
+        - heading "Connect" [level=2] [ref=e320]
+        - list [ref=e321]:
+          - listitem [ref=e322]:
+            - link "Contact Us" [ref=e323] [cursor=pointer]:
+              - /url: "#contact"
+          - listitem [ref=e324]:
+            - link "LinkedIn" [ref=e325] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/jawadbaig/
+          - listitem [ref=e326]:
+            - link "Engage Us" [ref=e327] [cursor=pointer]:
+              - /url: "#contact"
+    - generic [ref=e328]:
+      - paragraph [ref=e329]: © 2026 BAIG Advisory. All rights reserved.
+      - paragraph [ref=e330]: Alpharetta, Georgia, USA · GCC Region · European Markets
+  - generic [ref=e333]:
+    - button "Menu" [ref=e334]:
+      - img [ref=e336]
+      - generic: Menu
+    - button "Inspect" [ref=e340]:
+      - img [ref=e342]
+      - generic: Inspect
+    - button "Audit" [ref=e344]:
+      - img [ref=e346]
+      - generic: Audit
+    - button "Settings" [ref=e349]:
+      - img [ref=e351]
+      - generic: Settings

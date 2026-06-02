@@ -1,0 +1,548 @@
+---
+import '../styles/global.css';
+
+const linkedinUrl = 'https://www.linkedin.com/in/jawadbaig/';
+const currentYear = '2026';
+
+const navItems = [
+  ['About', '#about'],
+  ['Services', '#services'],
+  ['Experience', '#experience'],
+  ['Sectors', '#sectors'],
+  ['Contact', '#contact']
+];
+
+const heroStats = [
+  ['20+', 'Years of Senior Executive Leadership'],
+  ['4', 'C-Suite Functions Led'],
+  ['Enterprise', 'Clients Served'],
+  ['Fortune 500', 'Client Experience'],
+  ['US, GCC & EU', 'Markets Served']
+];
+
+const capabilities = [
+  'Business Strategy',
+  'Digital Transformation',
+  'IT Governance',
+  'Operational Excellence',
+  'Strategic Partnerships',
+  'Risk & Compliance',
+  'AI Implementation',
+  'Commercial Operations',
+  'Executive Leadership'
+];
+
+const credentials = [
+  'Former VP & CIO, Siemens, 20+ year tenure across multiple senior roles',
+  'CFO & Head of Audit and Compliance leadership experience',
+  'Expertise in ISO/IEC 42001 AI Governance and Management Systems',
+  'Active advisory presence across Atlanta, Georgia (US) and the Middle East'
+];
+
+const credibility = [
+  ['20+', 'Years Executive Leadership'],
+  ['4', 'C-Suite Function Domains'],
+  ['US, GCC & EU', 'Markets Served'],
+  ['AI', 'ISO/IEC 42001 Governance']
+];
+
+const services = [
+  {
+    title: 'Business Strategy & Operations',
+    body: 'Strategic planning, operating model design, performance improvement, market entry, organizational restructuring, and KPI discipline.',
+    tags: ['Strategic Planning', 'Operational Excellence', 'KPI Frameworks']
+  },
+  {
+    title: 'Digital Transformation & IT Leadership',
+    body: 'CIO-level advisory across technology strategy, infrastructure modernization, data center operations, enterprise IT governance, and digital roadmaps.',
+    tags: ['CIO Advisory', 'IT Governance', 'Digital Roadmap']
+  },
+  {
+    title: 'AI Strategy & Governance',
+    body: 'Responsible AI adoption, AI management systems, AI readiness, ISO/IEC 42001 frameworks, board advisory, and practical implementation framing.',
+    tags: ['ISO/IEC 42001', 'AI Readiness', 'Responsible AI']
+  },
+  {
+    title: 'Governance, Risk & Compliance',
+    body: 'Internal control environments, audit frameworks, compliance programs, accountability structures, risk management, and AI governance per ISO/IEC 42001.',
+    tags: ['Audit & Compliance', 'Risk Management', 'ISO 42001']
+  },
+  {
+    title: 'Strategic Alliances & Partnerships',
+    body: 'Partnership structuring, negotiation support, commercial partnerships, deal design, governance mechanisms, performance measurement, and joint ventures.',
+    tags: ['Alliance Management', 'Commercial Deals', 'Joint Ventures']
+  },
+  {
+    title: 'Interim Executive & Fractional CXO',
+    body: 'Embedded executive leadership during transitions, transformation, growth phases, or capability gaps, with team mentoring and handover planning.',
+    tags: ['Fractional CIO', 'Interim COO', 'Executive Transition']
+  }
+];
+
+const trackRecord = [
+  {
+    period: 'Present',
+    role: 'Founder & Principal Advisor',
+    org: 'BAIG Advisory, Alpharetta, Georgia',
+    body: 'Senior executive consulting across business strategy, digital transformation, governance, and commercial partnerships. Serving clients in the US, GCC, and European markets.'
+  },
+  {
+    period: 'Siemens, 20+ Years',
+    role: 'VP & Chief Information Officer',
+    org: 'Siemens',
+    body: 'Led enterprise IT strategy, infrastructure, and digital transformation programs. Managed large-scale IT operations including data center consolidation, ERP transformation, and vendor governance.'
+  },
+  {
+    period: 'Siemens',
+    role: 'CFO & Finance Operations Lead',
+    org: 'Siemens',
+    body: 'Finance leadership with accountability for budgeting, reporting, and operational finance across business units. Drove cost discipline and financial performance improvement.'
+  },
+  {
+    period: 'Siemens',
+    role: 'Head of Audit & Compliance',
+    org: 'Siemens',
+    body: 'Built and led the internal audit and compliance function, establishing frameworks for risk management, regulatory adherence, and governance across business lines.'
+  },
+  {
+    period: 'Earlier Career',
+    role: 'Senior Roles in Strategy & Operations',
+    org: 'Motorola, Deloitte, Strategic Alliance Roles',
+    body: 'Early career roles in strategy, operations, and financial services spanning multinational environments. Established cross-industry expertise in technology and consulting.'
+  }
+];
+
+const sectors = [
+  ['Industrial Technology', '20+ years at Siemens, deep expertise in industrial operations, automation, and large-scale enterprise transformation.'],
+  ['Financial Services & Fintech', 'CFO-level experience and fintech partnership management, with expertise in regulatory compliance and financial operations.'],
+  ['Energy & Oil & Gas', 'Advisory experience in energy sector operations and transformation, with growing expertise in GCC regional energy markets.'],
+  ['Technology & Consulting', 'Roots at Motorola and Deloitte, cross-industry advisory capability with a strong foundation in technology and management consulting.']
+];
+
+const engagementModels = [
+  {
+    badge: 'Advisory',
+    title: 'Retained Advisory',
+    body: 'Ongoing strategic advisory relationship with defined scope and monthly touchpoints. Ideal for boards, CEOs, and senior leadership teams navigating transformation.',
+    points: ['Monthly strategy sessions', 'On-call senior guidance', 'Quarterly review and recalibration', 'Priority responsiveness'],
+    best: 'Boards, CEOs, and senior leadership teams needing ongoing senior guidance.'
+  },
+  {
+    badge: 'Scoped Project',
+    title: 'Project Engagement',
+    body: 'Scoped, outcome-driven engagements with defined deliverables. From strategy workshops to full transformation programs, clear milestones, clear accountability.',
+    points: ['Defined scope and deliverables', 'Weekly progress and stakeholder updates', 'Full documentation and handoff', 'Post-project review included'],
+    best: 'Organizations needing a defined roadmap, transformation plan, governance framework, or strategic execution support.'
+  },
+  {
+    badge: 'Interim',
+    title: 'Fractional Executive',
+    body: 'Embedded, part-time executive leadership at C-suite level. Available as fractional CIO or interim COO during transitions, growth phases, or capability gaps.',
+    points: ['Dedicated days per week', 'Full executive accountability', 'Team leadership and mentoring', 'Structured handover planning'],
+    best: 'Companies needing interim executive leadership during transition, transformation, or capability gaps.'
+  }
+];
+
+const interestOptions = [
+  'Business Strategy & Operations',
+  'Digital Transformation & IT',
+  'Governance, Risk & Compliance',
+  'Strategic Alliances & Partnerships',
+  'Fractional / Interim Executive',
+  'AI Strategy & Governance',
+  'Other'
+];
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BAIG Advisory | Executive Consulting for Strategy, Transformation & Governance</title>
+    <meta name="description" content="BAIG Advisory provides senior executive consulting across business strategy, digital transformation, governance, AI readiness, and operational excellence across US, GCC, and European markets." />
+    <meta property="og:title" content="BAIG Advisory | Executive Consulting for Strategy, Transformation & Governance" />
+    <meta property="og:description" content="Senior executive consulting across strategy, digital transformation, governance, AI readiness, and operational excellence." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/baig-advisory-og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/assets/baig-advisory-icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/icon.png" />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'ProfessionalService',
+          name: 'BAIG Advisory',
+          description: 'Senior executive advisory and consulting across business strategy, digital transformation, governance, and strategic partnerships, serving US, GCC, and European markets.',
+          areaServed: ['United States', 'GCC Region', 'European Markets'],
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Alpharetta',
+            addressRegion: 'Georgia',
+            addressCountry: 'US'
+          },
+          founder: { '@id': '#jawad-baig' },
+          sameAs: [linkedinUrl]
+        },
+        {
+          '@type': 'Person',
+          '@id': '#jawad-baig',
+          name: 'Jawad Baig',
+          jobTitle: 'Founder & Principal Advisor',
+          worksFor: { '@type': 'Organization', name: 'BAIG Advisory' },
+          sameAs: [linkedinUrl]
+        },
+        {
+          '@type': 'Organization',
+          name: 'BAIG Advisory',
+          founder: { '@id': '#jawad-baig' }
+        }
+      ]
+    })} />
+    <script is:inline>
+      const savedTheme = localStorage.getItem('baig-theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = savedTheme || preferredTheme;
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand-lockup brand-lockup--dark" href="/" aria-label="BAIG Advisory home">
+          <img class="brand-icon" src="/assets/baig-advisory-icon.svg" alt="" width="40" height="40" aria-hidden="true" />
+          <span class="brand-wordmark" aria-hidden="true">
+            <span class="brand-wordmark__name">BAIG</span>
+            <span class="brand-wordmark__descriptor">Advisory</span>
+          </span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          {navItems.map(([label, href]) => (
+            <li><a href={href}>{label}</a></li>
+          ))}
+        </ul>
+
+        <div class="nav-actions">
+          <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
+          <a class="button button--primary nav-cta" href="#contact">Engage Us</a>
+          <button class="menu-button" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+        <div class="mobile-menu__panel">
+          <div class="mobile-menu__top">
+            <a class="brand-lockup brand-lockup--dark brand-lockup--mobile" href="/" aria-label="BAIG Advisory home">
+              <img class="brand-icon" src="/assets/baig-advisory-icon.svg" alt="" width="40" height="40" aria-hidden="true" />
+              <span class="brand-wordmark" aria-hidden="true">
+                <span class="brand-wordmark__name">BAIG</span>
+                <span class="brand-wordmark__descriptor">Advisory</span>
+              </span>
+            </a>
+            <button class="icon-button" type="button" data-menu-close aria-label="Close menu">Close</button>
+          </div>
+          <ul role="list">
+            {navItems.map(([label, href]) => (
+              <li><a href={href}>{label}</a></li>
+            ))}
+          </ul>
+          <a class="button button--primary" href="#contact">Engage Us</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section-dark" aria-labelledby="hero-title">
+        <div class="hero__inner">
+          <div class="hero__content reveal reveal--hero" data-reveal-seq="0">
+            <p class="kicker">Senior Executive Advisory</p>
+            <h1 id="hero-title">Strategy that moves the needle.</h1>
+            <p class="hero__lead">BAIG Advisory brings over 20 years of senior executive experience across digital transformation, governance, operational excellence, and strategic partnerships, serving organizations in the US, GCC, and European markets.</p>
+            <div class="hero__actions">
+              <a class="button button--gold" href="#contact">Engage Us</a>
+              <a class="button button--ghost" href="#services">Explore Services</a>
+            </div>
+          </div>
+
+          <aside class="hero-proof reveal reveal--panel" data-reveal-seq="1" aria-label="BAIG Advisory credibility signals">
+            {heroStats.map(([value, label]) => (
+              <div class="hero-proof__item">
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </div>
+            ))}
+          </aside>
+        </div>
+      </section>
+
+      <section class="capability-strip" aria-label="Advisory capabilities">
+        <div class="capability-strip__track">
+          {[...capabilities, ...capabilities].map((item) => (
+            <span>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <section class="section founder-section" id="about" aria-labelledby="about-title">
+        <div class="section-grid section-grid--founder">
+          <div class="section-copy reveal">
+            <p class="section-label">About BAIG Advisory</p>
+            <h2 id="about-title">Executive-grade advisory from someone who has done it.</h2>
+            <p>BAIG Advisory is a boutique consulting firm founded by a senior executive with over two decades of leadership at the intersection of strategy, technology, and operations. Having held VP, CIO, CFO, and Head of Audit & Compliance roles, including 20+ years at Siemens, we bring practitioner-level insight, not theory.</p>
+            <p>Our work spans digital transformation, governance frameworks, strategic alliance management, and business excellence. We engage clients across the United States, GCC, and European markets, with deep familiarity in industrial technology, fintech, and the energy sector.</p>
+          </div>
+
+          <div class="founder-card reveal">
+            <img src="/assets/jawad-baig-photo.jpeg" alt="Jawad Baig, Founder and Principal Advisor of BAIG Advisory" width="200" height="200" loading="eager" />
+            <div>
+              <h3>Jawad Baig</h3>
+              <p>Founder & Principal Advisor, BAIG Advisory</p>
+            </div>
+            <ul role="list">
+              {credentials.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section credibility-section" aria-labelledby="credibility-title">
+        <div class="section-intro reveal">
+          <h2 id="credibility-title">Credibility a senior viewer can scan quickly.</h2>
+          <p>The firm is positioned around executive accountability, international market awareness, and governance-led transformation experience.</p>
+        </div>
+        <div class="credibility-grid">
+          {credibility.map(([value, label]) => (
+            <div class="metric-tile reveal">
+              <strong>{value}</strong>
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="section quote-section section-dark" aria-labelledby="quote-title">
+        <div class="quote-shell reveal">
+          <p id="quote-title">"We bring 20+ years of lived experience in senior executive roles, strategy, technology, finance, and compliance, so clients get guidance that is grounded in real accountability, not advisory distance."</p>
+          <div class="quote-attribution">
+            <img src="/assets/jawad-baig-photo.jpeg" alt="" width="64" height="64" loading="lazy" />
+            <span>
+              <strong>Jawad Baig</strong>
+              <small>Founder & Principal Advisor, BAIG Advisory</small>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="section-intro reveal">
+          <p class="section-label">What We Do</p>
+          <h2 id="services-title">Advisory services built for senior-level outcomes.</h2>
+          <p>We work at the executive layer, strategy through execution, across the domains where leadership decisions create the most leverage.</p>
+        </div>
+        <div class="services-grid">
+          {services.map((service) => (
+            <article class:list={['service-card', 'reveal']} data-reveal-seq="2">
+              <h3>{service.title}</h3>
+              <p>{service.body}</p>
+              <div class="tag-row">
+                {service.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section track-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-grid">
+          <div class="section-copy reveal">
+            <p class="section-label">Executive Track Record</p>
+            <h2 id="experience-title">Depth forged over two decades.</h2>
+            <p>This is not advisory built on frameworks alone. Every engagement is informed by firsthand P&L accountability, cross-functional leadership, and board-level exposure at globally recognized organizations.</p>
+          </div>
+          <div class="timeline">
+            {trackRecord.map((item) => (
+              <article class="timeline-item reveal" data-reveal-seq="2">
+                <span>{item.period}</span>
+                <h3>{item.role}</h3>
+                <p class="timeline-org">{item.org}</p>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section sectors-section" id="sectors" aria-labelledby="sectors-title">
+        <div class="section-intro reveal">
+          <p class="section-label">Industries We Serve</p>
+          <h2 id="sectors-title">Sector experience that translates.</h2>
+          <p>Our advisory work is concentrated in sectors where technology, governance, and strategy intersect with scale and complexity.</p>
+        </div>
+        <div class="sector-list">
+          {sectors.map(([title, body]) => (
+            <article class="sector-row reveal">
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section engagement-section" id="engagement" aria-labelledby="engagement-title">
+        <div class="section-intro reveal">
+          <p class="section-label">How We Engage</p>
+          <h2 id="engagement-title">Flexible engagement models for every need.</h2>
+        </div>
+        <div class="engagement-grid">
+          {engagementModels.map((model) => (
+            <article class:list={['engagement-card', 'reveal']} data-reveal-seq="2">
+              <span class="model-badge">{model.badge}</span>
+              <h3>{model.title}</h3>
+              <p>{model.body}</p>
+              <ul role="list">
+                {model.points.map((point) => <li>{point}</li>)}
+              </ul>
+              <p class="best-for"><strong>Best for:</strong> {model.best}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section contact-section section-dark" id="contact" aria-labelledby="contact-title">
+        <div class="contact-grid">
+          <div class="section-copy reveal">
+            <p class="section-label">Get in Touch</p>
+            <h2 id="contact-title">Let's discuss what you're building.</h2>
+            <p>Whether you're navigating a transformation, building out a governance function, or need a senior strategic thought partner, we're happy to start with a conversation.</p>
+            <dl class="contact-list">
+              <div>
+                <dt>Headquarters</dt>
+                <dd>Alpharetta, Georgia, USA</dd>
+              </div>
+              <div>
+                <dt>Market Coverage</dt>
+                <dd>United States, GCC & European Markets</dd>
+              </div>
+              <div>
+                <dt>LinkedIn</dt>
+                <dd><a href={linkedinUrl} target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></dd>
+              </div>
+              <div>
+                <dt>Response Time</dt>
+                <dd>Within 24&ndash;48 hours</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="form-panel reveal">
+            <h3>Start the Conversation</h3>
+            <form
+              name="baig-advisory-inquiry"
+              method="POST"
+              action="/success/"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              data-success-url="/success/"
+              data-contact-form
+            >
+              <input type="hidden" name="form-name" value="baig-advisory-inquiry" />
+              <p class="hidden-field">
+                <label>Do not fill this out: <input name="bot-field" /></label>
+              </p>
+              <div class="form-row">
+                <label for="firstName">
+                  <span>First Name</span>
+                  <input id="firstName" name="firstName" autocomplete="given-name" required />
+                </label>
+                <label for="lastName">
+                  <span>Last Name</span>
+                  <input id="lastName" name="lastName" autocomplete="family-name" required />
+                </label>
+              </div>
+              <label for="email">
+                <span>Email Address</span>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </label>
+              <label for="company">
+                <span>Company / Organization</span>
+                <input id="company" name="company" autocomplete="organization" />
+              </label>
+              <label for="interest">
+                <span>Area of Interest</span>
+                <select id="interest" name="interest" required>
+                  <option value="">Select one</option>
+                  {interestOptions.map((option) => <option value={option}>{option}</option>)}
+                </select>
+              </label>
+              <label for="message">
+                <span>Message</span>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </label>
+              <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+              <button class="button button--gold" type="submit">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <a class="brand-lockup brand-lockup--dark" href="/" aria-label="BAIG Advisory home">
+            <img class="brand-logo" src="/assets/baig-advisory-logo.svg" alt="BAIG Advisory" width="220" height="68" />
+          </a>
+          <p>Senior executive advisory and consulting across business strategy, digital transformation, governance, and strategic partnerships, serving US, GCC, and European markets.</p>
+        </div>
+        <div>
+          <h2>Services</h2>
+          <ul role="list">
+            <li><a href="#services">Business Strategy</a></li>
+            <li><a href="#services">Digital Transformation</a></li>
+            <li><a href="#services">Governance & Risk</a></li>
+            <li><a href="#services">Strategic Alliances</a></li>
+            <li><a href="#services">Fractional Executive</a></li>
+            <li><a href="#services">AI Governance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Firm</h2>
+          <ul role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#engagement">Engagement Model</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Connect</h2>
+          <ul role="list">
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#contact">Engage Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {currentYear} BAIG Advisory. All rights reserved.</p>
+        <p>Alpharetta, Georgia, USA &middot; GCC Region &middot; European Markets</p>
+      </div>
+    </footer>
+
+    <script>
+      import '../scripts/site.js';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">BAIG Advisory</title>
+  <desc id="desc">Executive consulting for strategy, transformation, and governance.</desc>
+  <rect width="1200" height="630" fill="oklch(0.18 0.045 260)"/>
+  <rect x="64" y="64" width="1072" height="502" rx="28" fill="none" stroke="oklch(0.72 0.155 91)" stroke-width="2"/>
+  <text x="96" y="168" fill="oklch(0.72 0.155 91)" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">EXECUTIVE CONSULTING</text>
+  <text x="96" y="306" fill="oklch(0.98 0.006 88)" font-family="Arial, sans-serif" font-size="92" font-weight="800">BAIG Advisory</text>
+  <text x="96" y="390" fill="oklch(0.88 0.018 88)" font-family="Arial, sans-serif" font-size="38" font-weight="400">Strategy, transformation, governance, and AI readiness.</text>
+  <text x="96" y="486" fill="oklch(0.72 0.155 91)" font-family="Arial, sans-serif" font-size="26" font-weight="700">US, GCC &amp; European markets</text>
+</svg>
