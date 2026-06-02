@@ -963,8 +963,15 @@ textarea {
 }
 
 select {
-  color: oklch(0.18 0.03 255);
-  background: oklch(0.98 0.002 250);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: oklch(0.98 0.006 88);
+  background:
+    linear-gradient(45deg, transparent 50%, oklch(0.98 0.006 88) 50%) calc(100% - 1.35rem) calc(50% - 0.12rem) / 0.65rem 0.65rem no-repeat,
+    linear-gradient(135deg, oklch(0.98 0.006 88) 50%, transparent 50%) calc(100% - 0.95rem) calc(50% - 0.12rem) / 0.65rem 0.65rem no-repeat,
+    oklch(1 0 0 / 0.08);
+  padding-right: 3rem;
 }
 
 input::placeholder,
