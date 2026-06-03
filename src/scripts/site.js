@@ -8,7 +8,31 @@ const themeToggle = document.querySelector('[data-theme-toggle]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const menuClose = document.querySelector('[data-menu-close]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
+const siteHeader = document.querySelector('[data-header]');
 const mobileLinks = mobileMenu?.querySelectorAll('a') || [];
+let headerSyncFrame = 0;
+
+function syncHeaderHeight() {
+  if (!siteHeader) return;
+  const measuredHeight = `${Math.ceil(siteHeader.getBoundingClientRect().height)}px`;
+  if (root.style.getPropertyValue('--header-height') === measuredHeight) return;
+  root.style.setProperty('--header-height', measuredHeight);
+}
+
+function queueHeaderHeightSync() {
+  if (headerSyncFrame) return;
+  headerSyncFrame = window.requestAnimationFrame(() => {
+    headerSyncFrame = 0;
+    syncHeaderHeight();
+  });
+}
+
+syncHeaderHeight();
+window.addEventListener('load', syncHeaderHeight, { once: true });
+window.addEventListener('resize', queueHeaderHeightSync);
+window.addEventListener('orientationchange', queueHeaderHeightSync);
+
+document.fonts?.ready.then(syncHeaderHeight).catch(() => {});
 
 function setTheme(theme) {
   root.dataset.theme = theme;
@@ -55,38 +79,63 @@ mobileMenu?.addEventListener('click', (event) => {
   if (event.target === mobileMenu) closeMenu();
 });
 
-function scrollToHash() {
-  if (!window.location.hash) return;
-  const target = document.querySelector(window.location.hash);
-  if (!target) return;
-  const headerOffset = document.querySelector('[data-header]')?.getBoundingClientRect().height || 0;
-  const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-  window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
-}
-
-window.addEventListener('load', () => {
-  window.setTimeout(scrollToHash, 80);
-});
-
-window.addEventListener('hashchange', () => {
-  window.setTimeout(scrollToHash, 40);
-});
 /* Active section tracking */
 const navLinksAll = document.querySelectorAll('.nav-links a[href^="#"]');
 const sectionTargets = document.querySelectorAll('section[id]');
+let activeSectionId = '';
+let scrollLockUntil = 0;
+
+function setActiveNav(id) {
+  if (!id || id === activeSectionId) return;
+  activeSectionId = id;
+  navLinksAll.forEach((link) => {
+    link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+  });
+}
+
+navLinksAll.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const now = window.performance.now();
+    if (now < scrollLockUntil) {
+      event.preventDefault();
+      return;
+    }
+
+    const href = link.getAttribute('href');
+    if (!href?.startsWith('#')) return;
+
+    scrollLockUntil = now + 800;
+    setActiveNav(href.slice(1));
+  });
+});
 
 if ('IntersectionObserver' in window && sectionTargets.length) {
   const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const id = entry.target.id;
-      navLinksAll.forEach((link) => {
-        link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
-      });
-    });
-  }, { threshold: 0.1, rootMargin: '-20% 0px -60% 0px' });
+    const visibleEntries = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+    if (!visibleEntries.length) return;
+
+    setActiveNav(visibleEntries[0].target.id);
+  }, { threshold: 0.05, rootMargin: '-10% 0px -50% 0px' });
 
   sectionTargets.forEach((section) => sectionObserver.observe(section));
+} else if (window.location.hash) {
+  setActiveNav(window.location.hash.slice(1));
+}
+
+if (!activeSectionId && sectionTargets.length) {
+  const currentSection = Array.from(sectionTargets).find((section) => {
+    const rect = section.getBoundingClientRect();
+    return rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.1;
+  });
+
+  if (currentSection) {
+    setActiveNav(currentSection.id);
+  } else {
+    setActiveNav(sectionTargets[0].id);
+  }
 }
 
 const revealItems = document.querySelectorAll('.reveal');
