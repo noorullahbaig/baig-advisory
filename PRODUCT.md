@@ -6,7 +6,7 @@ brand
 
 ## Users
 
-Senior decision-makers and people close to senior decision-makers: CEOs, CFOs, CIOs, board members, founders, transformation leaders, and senior executives in the United States, GCC, and European markets. They are evaluating whether BAIG Advisory is credible enough to merit a first serious conversation.
+Senior decision-makers and people close to senior decision-makers: CEOs, CFOs, CIOs, board members, founders, transformation leaders, and senior executives across North America, Europe, and the GCC. They are evaluating whether BAIG Advisory is credible enough to merit a first serious conversation.
 
 ## Product Purpose
 

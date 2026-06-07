@@ -40,7 +40,7 @@ Primary audiences:
 - Board members
 - Founders
 - Senior transformation leaders
-- Enterprise decision-makers in the US, GCC, and European markets
+- Enterprise decision-makers in North America, Europe, and the GCC
 
 The tone should assume a time-constrained senior viewer who wants clarity, credibility, and restraint.
 
@@ -159,7 +159,7 @@ The current site uses these core positioning points:
 - governance and compliance
 - AI strategy and ISO/IEC 42001 context
 - strategic alliances and partnerships
-- US, GCC, and European markets
+- North American, European, and GCC markets
 
 These points are presented as firm and founder credibility, not as inflated sales copy.
 
@@ -204,13 +204,13 @@ These are used by the toggle button in CSS and replace the previous CSS-drawn ic
 
 - `public/assets/baig-advisory-icon.svg`
 - `public/assets/baig-advisory-logo.svg`
-- `public/assets/jawad-baig-photo.jpeg` is referenced via public asset output
+- `public/assets/jawad-baig-cropped.png` is referenced in the founder section
 
 Other image and PNG assets may exist in `public/assets`, but the SVG logo/icon files above are the active brand assets used by the site.
 
 ## Contact Form Implementation
 
-The contact form is implemented as a real Netlify form, not a fake front-end success state.
+The contact form is implemented as a real Cloudflare Pages Function backed by Resend, not a fake front-end success state.
 
 ### Current Fields
 
@@ -223,33 +223,29 @@ The contact form is implemented as a real Netlify form, not a fake front-end suc
 
 ### Area of Interest Options
 
-- Business Strategy & Operations
-- Digital Transformation & IT
-- Governance, Risk & Compliance
-- Strategic Alliances & Partnerships
-- Fractional / Interim Executive
-- AI Strategy & Governance
+- AI Governance & ISO/IEC 42001 Readiness
+- Strategy & Operating Performance
+- Digital Transformation & IT Leadership
+- Strategic Partnerships & Executive Support
+- Interim / Fractional Executive Support
 - Other
 
-### Netlify Form Configuration
+### Cloudflare Form Configuration
 
 The homepage form includes:
 
 - `method="POST"`
-- `action="/success/"`
-- `data-netlify="true"`
-- hidden `form-name`
-- honeypot field via `netlify-honeypot="bot-field"`
-
-Form name:
-
-- `baig-advisory-inquiry`
+- `action="/api/contact"`
+- `data-success-url="/success/"`
+- honeypot field via `bot-field`
+- client-side submission through `fetch` in `src/scripts/site.js`
+- Pages Function handler at `functions/api/contact.js`
 
 ### Contact Flow
 
 1. Visitor fills the inquiry form.
-2. On local preview, the site blocks fake delivery and shows a local-only warning.
-3. On deployed Netlify, the form submits via POST.
+2. The browser posts the form to `/api/contact`.
+3. Cloudflare Pages Functions validates the payload, ignores honeypot spam, and sends the inquiry through Resend.
 4. On success, the user is redirected to `/success/`.
 5. On failure, the user sees an inline error message.
 
@@ -258,24 +254,19 @@ Form name:
 Success page:
 
 - Heading: `Inquiry received.`
-- Body: `Thank you for reaching out. We will review your inquiry and respond within 24–48 hours.`
+- Body: `Thank you for reaching out. BAIG Advisory will review the context and respond with an appropriate next step.`
 
 Inline failure:
 
-- `Your inquiry could not be sent. Please try again.`
+- `The inquiry could not be sent. Please try again.`
 
 Local preview notice:
 
-- `Form delivery cannot be verified in local preview. Test a submission after deployment.`
+- `Form delivery is unavailable in this local preview. Use Cloudflare Pages Functions preview to test submissions.`
 
 ### Submission Tracking
 
-With the current configuration, submissions are received in Netlify Forms under the project’s Forms tab, using the `baig-advisory-inquiry` form name.
-
-Optional operational follow-up:
-
-- enable Netlify email notifications for form submissions
-- review verified and spam submissions in Netlify
+With the current configuration, submissions are sent by Resend to the recipient configured through the Cloudflare Pages environment variable `CONTACT_TO_EMAIL`.
 
 ## Accessibility and UX Requirements
 
