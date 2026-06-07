@@ -471,14 +471,6 @@ h3 {
   line-height: 1.5;
 }
 
-.hero__credibility {
-  margin: 0.75rem 0 0;
-  max-width: 26rem;
-  color: oklch(0.80 0.014 248);
-  font-size: 0.98rem;
-  line-height: 1.45;
-}
-
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -1251,8 +1243,7 @@ textarea::placeholder {
     grid-template-columns: 1fr;
   }
 
-  .hero__lead,
-  .hero__credibility {
+  .hero__lead {
     max-width: none;
   }
 
