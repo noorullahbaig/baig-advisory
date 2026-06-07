@@ -4,7 +4,6 @@ const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostn
 
 body.classList.add('enhanced');
 
-const themeToggle = document.querySelector('[data-theme-toggle]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const menuClose = document.querySelector('[data-menu-close]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
@@ -33,19 +32,6 @@ window.addEventListener('resize', queueHeaderHeightSync);
 window.addEventListener('orientationchange', queueHeaderHeightSync);
 
 document.fonts?.ready.then(syncHeaderHeight).catch(() => {});
-
-function setTheme(theme) {
-  root.dataset.theme = theme;
-  localStorage.setItem('baig-theme', theme);
-  themeToggle?.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-  themeToggle?.setAttribute('aria-pressed', String(theme === 'dark'));
-}
-
-setTheme(root.dataset.theme || 'light');
-
-themeToggle?.addEventListener('click', () => {
-  setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-});
 
 function openMenu() {
   if (!mobileMenu || !menuToggle) return;
@@ -163,14 +149,59 @@ if ('IntersectionObserver' in window) {
 const form = document.querySelector('[data-contact-form]');
 const formMessage = document.querySelector('[data-form-message]');
 
-form?.addEventListener('submit', (event) => {
-  if (!form.checkValidity()) return;
-  if (isLocalPreview) {
-    event.preventDefault();
+form?.addEventListener('submit', async (event) => {
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  event.preventDefault();
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const successUrl = form.dataset.successUrl || '/success/';
+  const formData = new FormData(form);
+
+  if (formMessage) {
+    formMessage.dataset.state = '';
+    formMessage.textContent = '';
+  }
+
+  submitButton?.setAttribute('disabled', 'true');
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+
+    let payload = null;
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+      payload = await response.json().catch(() => null);
+    }
+
+    if (!response.ok) {
+      const fallbackMessage = isLocalPreview
+        ? 'Form delivery is unavailable in this local preview. Use Cloudflare Pages Functions preview to test submissions.'
+        : 'The inquiry could not be sent. Please try again.';
+      throw new Error(payload?.error || fallbackMessage);
+    }
+
+    if (formMessage) {
+      formMessage.dataset.state = 'success';
+      formMessage.textContent = 'Inquiry sent. Redirecting...';
+    }
+
+    window.location.assign(successUrl);
+  } catch (error) {
     if (formMessage) {
       formMessage.dataset.state = 'error';
-      formMessage.textContent = 'Form delivery cannot be verified in local preview. Test a submission after deployment.';
+      formMessage.textContent = error instanceof Error ? error.message : 'The inquiry could not be sent. Please try again.';
     }
-    return;
+  } finally {
+    submitButton?.removeAttribute('disabled');
   }
 });
