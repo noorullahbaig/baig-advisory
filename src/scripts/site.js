@@ -111,7 +111,7 @@ if ('IntersectionObserver' in window && sectionTargets.length) {
   setActiveNav(window.location.hash.slice(1));
 }
 
-if (!activeSectionId && sectionTargets.length) {
+if (!activeSectionId && sectionTargets.length && (window.scrollY > 8 || window.location.hash)) {
   const currentSection = Array.from(sectionTargets).find((section) => {
     const rect = section.getBoundingClientRect();
     return rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.1;
