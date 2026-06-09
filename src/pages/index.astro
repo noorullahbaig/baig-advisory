@@ -171,35 +171,37 @@ const interestOptions = [
 
         <div class="nav-actions">
           <a class="button button--primary nav-cta" href="#contact">Start a Conversation</a>
-          <button class="menu-button" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+          <button class="menu-button" type="button" data-menu-toggle aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="menu-button__icon menu-button__icon--hamburger" width="22" height="22" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="25" y1="30" x2="75" y2="30" stroke="currentColor" stroke-width="3.33" stroke-linecap="round"/>
+              <line x1="25" y1="45" x2="75" y2="45" stroke="currentColor" stroke-width="3.33" stroke-linecap="round"/>
+              <line x1="25" y1="60" x2="75" y2="60" stroke="currentColor" stroke-width="3.33" stroke-linecap="round"/>
+            </svg>
+            <svg class="menu-button__icon menu-button__icon--close" width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g transform="translate(25, 25)">
+                <line x1="0" y1="0" x2="50" y2="50" stroke="currentColor" stroke-width="3.33" stroke-linecap="round"/>
+                <line x1="50" y1="0" x2="0" y2="50" stroke="currentColor" stroke-width="3.33" stroke-linecap="round"/>
+              </g>
+            </svg>
           </button>
         </div>
       </nav>
+    </header>
 
-      <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
-        <div class="mobile-menu__panel">
-          <div class="mobile-menu__top">
-            <a class="brand-lockup brand-lockup--dark brand-lockup--mobile" href="/" aria-label="BAIG Advisory home">
-              <img class="brand-icon" src="/assets/baig-advisory-icon.svg" alt="" width="40" height="40" aria-hidden="true" />
-              <span class="brand-wordmark" aria-hidden="true">
-                <span class="brand-wordmark__name">BAIG</span>
-                <span class="brand-wordmark__descriptor">Advisory</span>
-              </span>
-            </a>
-            <button class="icon-button" type="button" data-menu-close aria-label="Close menu">Close</button>
-          </div>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__panel">
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
           <ul role="list">
             {navItems.map(([label, href]) => (
               <li><a href={href}>{label}</a></li>
             ))}
           </ul>
-          <a class="button button--primary" href="#contact">Start a Conversation</a>
+        </nav>
+        <div class="mobile-menu__footer">
+          <a class="button button--gold" href="#contact">Start a Conversation</a>
         </div>
       </div>
-    </header>
+    </div>
 
     <main id="main">
       <section class="hero section-dark" aria-labelledby="hero-title">

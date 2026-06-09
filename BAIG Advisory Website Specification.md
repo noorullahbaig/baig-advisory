@@ -17,8 +17,8 @@ The website exists to present BAIG Advisory as a premium executive advisory firm
 - Site behavior script: `src/scripts/site.js`
 - Global styling: `src/styles/global.css`
 - Public assets: `public/assets`
-- Hosting target: Netlify
-- Domain registrar / DNS context: GoDaddy may be used for domain ownership while Netlify is used for hosting
+- Contact backend: Cloudflare Pages Function at `functions/api/contact.js`, backed by Resend
+- Domain registrar / DNS context: GoDaddy may be used for domain ownership while Cloudflare Pages is used for hosting and functions
 
 ## Product Positioning
 
@@ -83,64 +83,51 @@ The current site is a one-page executive advisory website plus a separate succes
 1. Sticky header with:
    - brand lockup
    - primary navigation
-   - theme toggle
-   - primary CTA: `Engage Us`
-   - mobile menu
+   - primary CTA: `Start a Conversation`
+   - single-button mobile menu toggle
+   - full-screen mobile menu overlay
 
 2. Hero section:
-   - kicker: `Senior Executive Advisory`
-   - headline: `Strategy that moves the needle.`
-   - supporting copy about 20+ years of senior executive experience
+   - kicker: `BAIG Advisory`
+   - headline: `Strategy for leaders navigating complex change.`
+   - supporting copy about transformation agendas, governance, and operating performance
    - primary and secondary CTAs
-   - proof rail with credibility stats
+   - three-part advisory priorities panel:
+     - `Shape the agenda`
+     - `Strengthen governance`
+     - `Improve performance`
 
-3. Capability marquee:
-   - looping list of advisory capabilities
-
-4. About / founder section:
+3. About / founder section:
    - founder-led positioning
    - Jawad Baig photo
    - executive credibility bullets
 
-5. Credibility section:
-   - short scan-friendly metrics
-
-6. Quote section:
-   - founder quote emphasizing lived executive experience
-
-7. Services section:
-   - Business Strategy & Operations
+4. Advisory focus section:
+   - AI Governance & ISO/IEC 42001 Readiness
+   - Strategy & Operating Performance
    - Digital Transformation & IT Leadership
-   - AI Strategy & Governance
-   - Governance, Risk & Compliance
-   - Strategic Alliances & Partnerships
-   - Interim Executive & Fractional CXO
+   - Strategic Partnerships & Executive Support
 
-8. Executive track record section:
-   - BAIG Advisory
-   - Siemens leadership roles
-   - earlier career roles
+5. When to engage section:
+   - execution stalling after strategy is set
+   - transformation consuming capital without enough control
+   - risk and governance needing structure before commitment
+   - leadership capacity as the bottleneck
 
-9. Sector experience section:
-   - Industrial Technology
-   - Financial Services & Fintech
-   - Energy & Oil & Gas
-   - Technology & Consulting
-
-10. Engagement model section:
+6. Engagement model section:
    - Retained Advisory
-   - Project Engagement
-   - Fractional Executive
+   - Scoped Engagement
+   - Interim / Fractional Executive Support
 
-11. Contact section:
+7. Contact section:
    - location and coverage context
    - LinkedIn link
    - response time
-   - Netlify-backed inquiry form
+   - Cloudflare-backed inquiry form
 
-12. Footer:
+8. Footer:
    - brand lockup
-   - service links
+   - advisory focus links
    - firm links
    - contact links
 
@@ -185,20 +172,11 @@ The implemented look is built around:
 
 ### Theme Support
 
-The site supports both light and dark themes using `data-theme` on the root element and a persisted `baig-theme` local storage value.
+The current site ships a single refined light theme with deep navy sections, warm gold accents, and warm off-white surfaces. There is no runtime light/dark theme toggle in the current implementation.
 
-### Theme Toggle Icons
+### Mobile Navigation
 
-The current dark/light mode toggle uses SVG assets extracted from:
-
-- `/Users/noorullah/Downloads/BAIG-Bold-Refined-Icons.html`
-
-Implemented assets:
-
-- `public/assets/theme-icon-light.svg`
-- `public/assets/theme-icon-dark.svg`
-
-These are used by the toggle button in CSS and replace the previous CSS-drawn icon approach.
+The current mobile navigation uses a full-screen overlay opened by a single toggle button in the sticky header. The button swaps between hamburger and close SVG states via inline SVG markup and CSS transitions.
 
 ### Brand Assets Currently in Use
 
@@ -216,8 +194,9 @@ The contact form is implemented as a real Cloudflare Pages Function backed by Re
 
 - First Name
 - Last Name
-- Email Address
+- Work Email
 - Company / Organization
+- Role / Title
 - Area of Interest
 - Message
 
@@ -276,7 +255,6 @@ The implemented site should continue to preserve:
 - skip link
 - keyboard-accessible navigation
 - visible focus states
-- accessible theme toggle labeling
 - mobile menu accessibility
 - reduced motion support
 - explicit form labels
@@ -300,45 +278,44 @@ Motion should remain restrained and premium, not playful or exaggerated.
 
 `src/scripts/site.js` currently handles:
 
-- theme toggle persistence
 - mobile menu open/close behavior
-- anchor scroll offset behavior
+- active section tracking for header navigation
 - reveal-on-scroll animation
-- Netlify contact form submission enhancement
+- Cloudflare contact form submission enhancement
 
 ### Styles
 
 `src/styles/global.css` currently defines:
 
 - color tokens
-- theme tokens
 - typography and layout
 - all section styles
 - form styles
-- theme toggle icon styling
+- mobile menu overlay and icon transitions
 - responsive breakpoints
 
 ### Known UI Refinements Already Applied
 
 - Contact success copy was revised to remove awkward third-person brand phrasing.
 - The `Area of Interest` select field was corrected to use the dark form treatment instead of a bright white browser-native appearance.
-- Theme toggle now uses the refined SVG assets from Downloads rather than a CSS-constructed symbol.
+- The mobile menu now uses a full-screen overlay with animated inline SVG toggle states instead of a side panel with a separate close button.
 
 ## Deployment Context
 
-The project is intended to deploy from GitHub to Netlify.
+The project is intended to deploy from GitHub to Cloudflare Pages.
 
 Current repo context:
 
 - GitHub repository exists and is private
-- Netlify should be configured with:
+- Cloudflare Pages should be configured with:
   - Build command: `npm run build`
   - Publish directory: `dist`
+  - Functions directory: `functions`
 
 Domain context:
 
 - GoDaddy may be used as registrar and DNS owner
-- Netlify is the expected hosting platform
+- Cloudflare Pages is the expected hosting and serverless platform
 
 ## What This Document Replaces
 
@@ -347,7 +324,7 @@ This document supersedes earlier planning assumptions that no longer match the l
 - older raw HTML prototype assumptions
 - fake front-end-only contact form behavior
 - outdated success-page wording
-- CSS-generated theme toggle icon assumption
+- dark/light theme toggle assumptions
 
 ## Ongoing Change Rule
 
