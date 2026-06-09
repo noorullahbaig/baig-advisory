@@ -47,6 +47,7 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 body {
@@ -60,6 +61,7 @@ body {
   font-family: var(--font-body);
   font-size: clamp(1rem, 0.96rem + 0.18vw, 1.1rem);
   line-height: 1.65;
+  overflow-x: clip;
 }
 
 body.menu-open {
@@ -191,7 +193,7 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  height: 76px;
+  min-height: var(--header-height);
   max-width: var(--max-wide);
   margin-inline: auto;
   padding-inline: var(--page-pad);
@@ -202,6 +204,16 @@ h3 {
   align-items: center;
   gap: 0.8rem;
   min-width: fit-content;
+}
+
+.nav-actions,
+.hero__inner,
+.hero__content,
+.hero-brief,
+.section-grid > *,
+.contact-grid > *,
+.footer-grid > * {
+  min-width: 0;
 }
 
 .brand-lockup--dark {
@@ -410,6 +422,10 @@ h3 {
   -webkit-overflow-scrolling: touch;
 }
 
+.mobile-menu[hidden] {
+  display: none;
+}
+
 .mobile-menu.is-active {
   visibility: visible;
   pointer-events: auto;
@@ -466,7 +482,6 @@ h3 {
   font-family: var(--font-display);
   font-size: clamp(1.55rem, 5.6vw, 2.2rem);
   font-weight: 700;
-  letter-spacing: -0.01em;
   color: #f0ebde;
   transition: color 180ms var(--ease-out), letter-spacing 260ms var(--ease-out);
 }
@@ -1343,7 +1358,7 @@ textarea::placeholder {
   }
 
   .nav-shell {
-    height: 64px;
+    min-height: var(--header-height);
   }
 
   .menu-button {
@@ -1373,6 +1388,7 @@ textarea::placeholder {
 
   .hero__actions .button {
     width: 100%;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -1398,6 +1414,7 @@ textarea::placeholder {
     max-width: none;
     font-size: 1rem;
     line-height: 1.55;
+    overflow-wrap: anywhere;
   }
 
   .hero-brief {

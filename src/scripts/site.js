@@ -5,17 +5,59 @@ body.classList.add('enhanced');
 
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
+const mobileMenuPanel = mobileMenu?.querySelector('.mobile-menu__panel');
 const mobileLinks = mobileMenu?.querySelectorAll('a') || [];
+let closeTransitionFrame = 0;
+let closeCleanupTimer = 0;
 
 function isMenuOpen() {
   return mobileMenu?.classList.contains('is-active');
 }
 
+function setMenuInteractivityState(isInteractive) {
+  if (!mobileMenu) return;
+  mobileMenu.setAttribute('aria-hidden', isInteractive ? 'false' : 'true');
+  if ('inert' in mobileMenu) {
+    mobileMenu.inert = !isInteractive;
+  } else if (!isInteractive) {
+    mobileMenu.setAttribute('inert', '');
+  } else {
+    mobileMenu.removeAttribute('inert');
+  }
+}
+
+function clearCloseCleanupTimer() {
+  if (!closeCleanupTimer) return;
+  window.clearTimeout(closeCleanupTimer);
+  closeCleanupTimer = 0;
+}
+
+function finalizeClosedState() {
+  if (!mobileMenu || isMenuOpen()) return;
+  mobileMenu.hidden = true;
+  setMenuInteractivityState(false);
+}
+
+function queueCloseCleanup() {
+  clearCloseCleanupTimer();
+  closeCleanupTimer = window.setTimeout(() => {
+    closeCleanupTimer = 0;
+    finalizeClosedState();
+  }, 420);
+}
+
 function openMenu() {
   if (!mobileMenu || !menuToggle) return;
-  mobileMenu.classList.add('is-active');
+  window.cancelAnimationFrame(closeTransitionFrame);
+  clearCloseCleanupTimer();
+  mobileMenu.hidden = false;
+  setMenuInteractivityState(true);
   menuToggle.setAttribute('aria-expanded', 'true');
   body.classList.add('menu-open');
+  closeTransitionFrame = window.requestAnimationFrame(() => {
+    closeTransitionFrame = 0;
+    mobileMenu.classList.add('is-active');
+  });
 }
 
 function closeMenu({ returnFocus = true } = {}) {
@@ -23,11 +65,18 @@ function closeMenu({ returnFocus = true } = {}) {
   mobileMenu.classList.remove('is-active');
   menuToggle.setAttribute('aria-expanded', 'false');
   body.classList.remove('menu-open');
+  queueCloseCleanup();
 
   if (returnFocus) {
     menuToggle.focus();
   }
 }
+
+mobileMenuPanel?.addEventListener('transitionend', (event) => {
+  if (event.target !== mobileMenuPanel || event.propertyName !== 'opacity') return;
+  if (isMenuOpen()) return;
+  finalizeClosedState();
+});
 
 menuToggle?.addEventListener('click', () => {
   if (isMenuOpen()) {
