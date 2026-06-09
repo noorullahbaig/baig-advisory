@@ -1,64 +1,47 @@
-const root = document.documentElement;
 const body = document.body;
 const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
 body.classList.add('enhanced');
 
 const menuToggle = document.querySelector('[data-menu-toggle]');
-const menuClose = document.querySelector('[data-menu-close]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
-const siteHeader = document.querySelector('[data-header]');
 const mobileLinks = mobileMenu?.querySelectorAll('a') || [];
-let headerSyncFrame = 0;
 
-function syncHeaderHeight() {
-  if (!siteHeader) return;
-  const measuredHeight = `${Math.ceil(siteHeader.getBoundingClientRect().height)}px`;
-  if (root.style.getPropertyValue('--header-height') === measuredHeight) return;
-  root.style.setProperty('--header-height', measuredHeight);
+function isMenuOpen() {
+  return mobileMenu?.classList.contains('is-active');
 }
-
-function queueHeaderHeightSync() {
-  if (headerSyncFrame) return;
-  headerSyncFrame = window.requestAnimationFrame(() => {
-    headerSyncFrame = 0;
-    syncHeaderHeight();
-  });
-}
-
-syncHeaderHeight();
-window.addEventListener('load', syncHeaderHeight, { once: true });
-window.addEventListener('resize', queueHeaderHeightSync);
-window.addEventListener('orientationchange', queueHeaderHeightSync);
-
-document.fonts?.ready.then(syncHeaderHeight).catch(() => {});
 
 function openMenu() {
   if (!mobileMenu || !menuToggle) return;
-  mobileMenu.hidden = false;
+  mobileMenu.classList.add('is-active');
   menuToggle.setAttribute('aria-expanded', 'true');
   body.classList.add('menu-open');
-  menuClose?.focus();
 }
 
 function closeMenu({ returnFocus = true } = {}) {
   if (!mobileMenu || !menuToggle) return;
-  mobileMenu.hidden = true;
+  mobileMenu.classList.remove('is-active');
   menuToggle.setAttribute('aria-expanded', 'false');
   body.classList.remove('menu-open');
+
   if (returnFocus) {
     menuToggle.focus();
   }
 }
 
-menuToggle?.addEventListener('click', openMenu);
-menuClose?.addEventListener('click', closeMenu);
+menuToggle?.addEventListener('click', () => {
+  if (isMenuOpen()) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
 mobileLinks.forEach((link) => link.addEventListener('click', () => {
-  if (!mobileMenu?.hidden) closeMenu({ returnFocus: false });
+  if (isMenuOpen()) closeMenu({ returnFocus: false });
 }));
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && !mobileMenu?.hidden) closeMenu();
+  if (event.key === 'Escape' && isMenuOpen()) closeMenu();
 });
 
 mobileMenu?.addEventListener('click', (event) => {
