@@ -6,17 +6,17 @@ Boardroom editorial restraint: deep navy authority, precise honey-gold accents, 
 
 ## Color System
 
-Use fixed brand tokens in CSS custom properties. Primary brand presence comes from navy surfaces and gold accents, with warm off-white support tones and restrained gradients.
+Use OKLCH custom properties. Primary brand presence comes from navy surfaces and gold accents, not decorative gradients.
 
 ```css
---navy-950: #040b1a;
---navy-900: #0b1628;
---brand-600: #C49A22;
---brand-500: #C49A22;
---bg: #fcf5e5;
---surface: #fffdeb;
---ink: #141b25;
---muted: #52595f;
+--color-navy-950: oklch(0.18 0.045 260);
+--color-navy-900: oklch(0.23 0.055 258);
+--color-gold-600: oklch(0.66 0.145 88);
+--color-gold-500: oklch(0.72 0.155 91);
+--color-bg: oklch(0.97 0.012 88);
+--color-surface: oklch(1 0 0);
+--color-ink: oklch(0.20 0.025 255);
+--color-muted: oklch(0.43 0.025 250);
 ```
 
 ## Typography
@@ -29,7 +29,7 @@ One-page executive showcase with a full-width hero, spacious editorial sections,
 
 ## Components
 
-Sticky header, compact brand lockup, full-screen mobile navigation overlay, hero framework panel, founder credibility block, advisory focus cards, when-to-engage scenarios, engagement model cards, Cloudflare-backed contact form, and structured footer.
+Sticky header, logo placeholder, theme toggle, mobile navigation, hero proof rail, capability marquee, founder credibility block, service matrix, track record timeline, sector list, engagement model cards, Netlify contact form, and structured footer.
 
 ## Motion
 

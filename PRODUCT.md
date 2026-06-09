@@ -30,4 +30,4 @@ Do not make the site feel like a freelancer portfolio, generic consulting templa
 
 ## Accessibility & Inclusion
 
-Target WCAG AA. Preserve semantic headings, skip link, accessible navigation labels, keyboard focus states, reduced-motion support, readable contrast, full-screen mobile navigation accessibility, clear form labels, and explicit form success and error states.
+Target WCAG AA. Preserve semantic headings, skip link, accessible navigation labels, keyboard focus states, reduced-motion support, readable contrast, mobile navigation accessibility, clear form labels, and explicit form success and error states.
