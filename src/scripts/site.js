@@ -199,6 +199,7 @@ form?.addEventListener('submit', async (event) => {
   }
 
   submitButton?.setAttribute('disabled', 'true');
+  submitButton?.classList.add('is-loading');
 
   try {
     const response = await fetch(form.action, {
@@ -235,5 +236,6 @@ form?.addEventListener('submit', async (event) => {
     }
   } finally {
     submitButton?.removeAttribute('disabled');
+    submitButton?.classList.remove('is-loading');
   }
 });
