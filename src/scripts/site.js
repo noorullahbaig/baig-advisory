@@ -143,7 +143,7 @@ if ('IntersectionObserver' in window && sectionTargets.length) {
   setActiveNav(window.location.hash.slice(1));
 }
 
-if (!activeSectionId && sectionTargets.length) {
+if (!activeSectionId && sectionTargets.length && (window.scrollY > 8 || window.location.hash)) {
   const currentSection = Array.from(sectionTargets).find((section) => {
     const rect = section.getBoundingClientRect();
     return rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.1;
@@ -199,6 +199,7 @@ form?.addEventListener('submit', async (event) => {
   }
 
   submitButton?.setAttribute('disabled', 'true');
+  submitButton?.classList.add('is-loading');
 
   try {
     const response = await fetch(form.action, {
@@ -235,5 +236,6 @@ form?.addEventListener('submit', async (event) => {
     }
   } finally {
     submitButton?.removeAttribute('disabled');
+    submitButton?.classList.remove('is-loading');
   }
 });

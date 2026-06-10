@@ -1,5 +1,10 @@
 node_modules/
 dist/
 .astro/
+.wrangler/
 .DS_Store
 npm-debug.log*
+Jawad-Baig-Photo-cropped.png
+Jawad-Baig-Photo.png
+Jawad-Baig-transparent.webp
+Website_Skeleton_Guide.md
